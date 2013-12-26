@@ -26,6 +26,21 @@ public final class DataBaseManager
 	{
 		pm.makePersistent(s);
 	}
+	
+	public List<User> getUserData(String name)
+    {
+    	System.out.println("getting user " + name);
+    	javax.jdo.Query q = pm.newQuery(User.class);
+    	q.setFilter("name==UserName");
+    	q.declareParameters("String UserName");
+    	return (List<User>)q.execute(name);
+    }
+	
+    public List<User> getUser()
+    {
+    	javax.jdo.Query q = pm.newQuery(User.class);
+    	return (List<User>)q.execute();
+    }
 
 
 	public boolean checkUser(String UserName, String password) 

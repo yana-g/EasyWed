@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
               http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         version="2.5"
-         xmlns="http://java.sun.com/xml/ns/javaee">
+	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
 
-  <!-- Servlets -->
+	<!-- Servlets -->
 	<servlet>
-    	<servlet-name>Registration</servlet-name>
-    	<servlet-class>usersPack.Registration</servlet-class>
+		<servlet-name>Registration</servlet-name>
+		<servlet-class>usersPack.Registration</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Registration</servlet-name>
 		<url-pattern>/Registration</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
-    	<servlet-name>Login</servlet-name>
-    	<servlet-class>usersPack.Login</servlet-class>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>usersPack.Login</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/LogedIn</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
-    	<servlet-name>Search</servlet-name>
-    	<servlet-class>searchPack.Search</servlet-class>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>searchPack.Search</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Search</servlet-name>
@@ -34,21 +33,128 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>IndexPageJSP</servlet-name>
+		<servlet-name>IndexPage</servlet-name>
 		<jsp-file>/WEB-INF/Index.jsp</jsp-file>
-	</servlet>		
+	</servlet>
 	<servlet-mapping>
-    	<servlet-name>IndexPageJSP</servlet-name>
-    	<url-pattern>Index</url-pattern>
+		<servlet-name>IndexPage</servlet-name>
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ContactPage</servlet-name>
+		<jsp-file>/WEB-INF/Contact.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ContactPage</servlet-name>
+		<url-pattern>/contact</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginPage</servlet-name>
+		<jsp-file>/WEB-INF/Login.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginPage</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ProfessionalPage</servlet-name>
+		<jsp-file>/WEB-INF/Professional.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProfessionalPage</servlet-name>
+		<url-pattern>/professional</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ProfilePage</servlet-name>
+		<jsp-file>/WEB-INF/Profile.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProfilePage</servlet-name>
+		<url-pattern>/profile</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SignUpPage</servlet-name>
+		<jsp-file>/WEB-INF/SignUp.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SignUpPage</servlet-name>
+		<url-pattern>/signUp</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ThankYouPage</servlet-name>
+		<jsp-file>/WEB-INF/ThankYou.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ThankYouPage</servlet-name>
+		<url-pattern>/thankYou</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UploadPage</servlet-name>
+		<jsp-file>/WEB-INF/Upload.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadPage</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>AccountSettingsPage</servlet-name>
+		<jsp-file>/WEB-INF/AccountSettings.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccountSettingsPage</servlet-name>
+		<url-pattern>/accountSet</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>FeedbackPage</servlet-name>
+		<jsp-file>/WEB-INF/Feedback.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FeedbackPage</servlet-name>
+		<url-pattern>/feedback</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>MyUploadsPage</servlet-name>
+		<jsp-file>/WEB-INF/MyUploads.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyUploadsPage</servlet-name>
+		<url-pattern>/myUploads</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MyOrdersPage</servlet-name>
+		<jsp-file>/WEB-INF/MyOrders.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyOrdersPage</servlet-name>
+		<url-pattern>/myOrders</url-pattern>
+	</servlet-mapping>
 	
-  
-  <!-- Default page to serve -->
-  <welcome-file-list>
-  	<welcome-file>Index</welcome-file>
-  </welcome-file-list>
- 
- 
+	<servlet>
+		<servlet-name>InboxPage</servlet-name>
+		<jsp-file>/WEB-INF/Inbox.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InboxPage</servlet-name>
+		<url-pattern>/inbox</url-pattern>
+	</servlet-mapping>	
+
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>WEB-INF/Index.jsp</welcome-file>
+	</welcome-file-list>
+
+
 
 </web-app>

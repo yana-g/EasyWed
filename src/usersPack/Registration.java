@@ -44,24 +44,23 @@ public class Registration extends HttpServlet {
 	{
 		PrintWriter out = response.getWriter();
 
-		String userName = request.getParameter("theUserNameField");
-		String firstName = request.getParameter("theFirstNameField");
-		String lastName = request.getParameter("theLastNameField");
-		String mail = request.getParameter("theMailField");
-		String password = request.getParameter("thePasswordField");
-		String confPassword = request.getParameter("thePhoneField");
-
-		/*
-		System.out.println("the UserName is " + userName.toString());
-		System.out.println("the FirstName is " + firstName.toString());
-		System.out.println("the LastName is " + lastName.toString());
+		Object firstName = request.getParameter("firstName");
+		Object lastName = request.getParameter("lastName");
+		Object userName = request.getParameter("username");
+		Object mail = request.getParameter("email");
+		Object password = request.getParameter("pwd");
+		Object confPassword = request.getParameter("conPwd");
+		
+		System.out.println("the firstName is " + firstName.toString());
+		System.out.println("the lastName is " + lastName.toString());
+		System.out.println("the userName is " + userName.toString());
 		System.out.println("the mail is " + mail.toString());
 		System.out.println("the password is " + password.toString());
-		 */
-
+		System.out.println("the confPassword is " + confPassword.toString());
+		
 		HttpSession session = request.getSession();
 
-		if (userName.equals("") || firstName.equals("") || lastName.equals("") || mail.equals("")) {
+/*		if (userName.equals("") || firstName.equals("") || lastName.equals("") || mail.equals("")) {
 			Integer registerError = Integer.valueOf(1);
 			session.setAttribute("registerError", registerError);
 			out.println("One of the Mandatary field is empty");
@@ -77,20 +76,21 @@ public class Registration extends HttpServlet {
 			session.setAttribute("registerError", registerError);
 			out.println("Your password and confirm password does not match.");
 		}
-
+*/
 		if (userName != null && firstName != null && lastName != null && mail != null && password != null) {
 
 			User newUser = new User();
-			newUser.setUserName(userName);
-			newUser.setFirstName(firstName);
-			newUser.setLastName(lastName);
-			newUser.setMail(mail);
-			newUser.setPassword(password);
+			newUser.setUserName(userName.toString());
+			newUser.setFirstName(firstName.toString());
+			newUser.setLastName(lastName.toString());
+			newUser.setMail(mail.toString());
+			newUser.setPassword(password.toString());
 
 			session.setAttribute("userName", newUser.getUserName());
 
 			DataBaseManager.getInstance().insertNewUser(newUser);
 		}
+		response.sendRedirect("ThankYou");
 	}
 
 }

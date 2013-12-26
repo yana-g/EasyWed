@@ -1,51 +1,57 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="dbManager.DataBaseManager"%>
+<%@page import="usersPack.User"%>
+<%@page import="java.util.List;"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="he" lang="he" dir="rtl">
-<head>   
-	<link rel="stylesheet" href="Test1.css" type="text/css" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta http-equiv="Content-Language" content="he" />
-    
-	
-       
-	<title>**Wed4U**</title>
+
+<%@ include file="header.jsp"%>
+
+<!-- begin content -->
+<div id="site_content">
+
+	<div class="content1">
+		<h7>!Thank You</h7>
+
+		<%
+		List<User>list;
+		if (session.getAttribute("userName") == null) {
+			list = DataBaseManager.getInstance().getUser();
+		}	
+		else {
+			list = DataBaseManager.getInstance().getUserData(session.getAttribute("UserName").toString());
+		}
+		%>
+
+		<table>
+			<tr>
+				<th>שם פרטי</th>
+				<th>שם משפחה</th>
+				<th>שם משתמש</th>
+				<th>דוא"ל</th>
+				<th>סיסמה</th>
+			</tr>
+			<%
+			for (User item : list) {
+			%>
+			<tr>
+				<td><%=item.getFirstName()%></td>
+				<td><%=item.getLastName()%></td>
+				<td><%=item.getUserName()%></td>
+				<td><%=item.getMail()%></td>
+				<td><%=item.getPassword()%></td>
+			</tr>
+			<%
+			}
+			%>
+		</table>
 
 
-</head>
-<body>
+	</div>
 
-	
-	<%@ include file="header.jsp" %>
-	
+</div>
+<!-- end content -->
 
-
-	
-
-	
-	
-		 <!-- begin content -->    
-    <div id="site_content">
-    
-      <!-- begin sidebar -->
-    
-      <!-- end sidebar -->
-           
-      <div class="content1">
-        <h7>!Thank You</h7>
-  
-        
-      </div>
-    </div>
-    <!-- end content -->
-
-
-		
-
-
-		
-		
-
-	<%@ include file="footer.jsp" %>
-</body>
-</html>
+<%@ include file="footer.jsp"%>
 

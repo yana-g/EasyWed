@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
-encoding//war/Test1.css=UTF-8
 encoding//war/WEB-INF/Contact.jsp=UTF-8
 encoding//war/WEB-INF/Index.jsp=UTF-8
 encoding//war/WEB-INF/footer.jsp=UTF-8
 encoding//war/WEB-INF/header.jsp=UTF-8
+encoding//war/WEB-INF/profileMenubar.jsp=UTF-8
+encoding//war/css/Test1.css=UTF-8

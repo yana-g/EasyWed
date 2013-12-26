@@ -1,59 +1,48 @@
-<%@page import="dbManager.DataBaseManager" %>
-<%@page import="usersPack.User" %>
-<%@page import="java.util.List;" %>
+<%@page import="dbManager.DataBaseManager"%>
+<%@page import="usersPack.User"%>
+<%@page import="java.util.List;"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="he" lang="he"
-	dir="rtl">
-<head>
-<link rel="stylesheet" href="Test1.css" type="text/css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="Content-Language" content="he" />
 
-<title>**Wed4U**</title>
+<%@ include file="header.jsp"%>
 
-</head>
-<body>
+<!-- begin content -->
+<div id="site_content">
 
-	<%@ include file="header.jsp"%>
+	<div class="center" id="searchIndex">
 
-	<!-- begin content -->
-	<div id="site_content">
+		<h2>&nbsp;כניסה למערכת:</h2>
 
-	<!-- <div class="content"> -->
-		<div class="center">
-			<br> <br>
+		<form id="contact" action="Index.jsp" method="post">
+			<div class="form_settings">
 
-			<form id="contact" action="Index.jsp" method="post">
-				<div class="form_settings">
-					<div class="fieldName">UserName:</div>
-					<div class="field">
-						<input type="text" name="username" id="username" class="textBox"
-							required="required" />
-					</div>
-					<div style="clear: both"></div>
-					<br> <br>
-					<div class="fieldName">Password:</div>
-					<div class="field">
-						<input type="password" name="pwd" id="pwd" class="textBox"
-							required="required" />
-					</div>
-					<div style="clear: both"></div>
-					<br>
-					<p style="padding: 15px 400px 15px">
-						<input class="submit" type="submit" name="name" value="Login" />
-					</p>
-				</div>
-			</form>
-		</div>
+				<input type="text" name="username" id="username" class="textBox"
+					required="required" placeholder="שם משתמש..." /> 
+					
+				<input type="password" name="pwd" id="pwd" class="textBox"
+					required="required" placeholder="סיסמה..." />
 
+				<p style="padding: 15px 400px 15px">
+					<input class="submit" type="submit" name="name" value="Login" />
+				</p>
+			
+				<p style="padding: 15px 400px 15px">
+					<a href="signUp"><h2>משתמש חדש? הרשם כאן</h2></a>
+					
+					<a href="professional"><h2>איש מקצוע חדש? לחץ כאן</h2></a>
+				</p>
+				
+			</div>
+		</form>
 	</div>
 
-	<!--  </div>-->
-	<!-- end content -->
+</div>
 
-	<%@ include file="footer.jsp"%>
-</body>
-</html>
+<!--  </div>-->
+<!-- end content -->
+
+<%@ include file="footer.jsp"%>
+
 
