@@ -10,7 +10,7 @@ import com.google.appengine.api.datastore.DatastoreServiceFactory;
 public final class DataBaseManager
 {
 	DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
-	PersistenceManager pm = PMF.get().getPersistenceManager();
+	static PersistenceManager pm = PMF.get().getPersistenceManager();
 	private DataBaseManager() {}
 	private static DataBaseManager instance = null;
 
@@ -21,37 +21,41 @@ public final class DataBaseManager
 		return instance;
 	}
 
-
+	
 	public void insertNewUser(User s)
 	{
 		pm.makePersistent(s);
 	}
 	
-	public List<User> getUserData(String name)
+	
+	@SuppressWarnings("unchecked")
+	public List<User> getUserByName(String name)
     {
     	System.out.println("getting user " + name);
     	javax.jdo.Query q = pm.newQuery(User.class);
-    	q.setFilter("name==UserName");
-    	q.declareParameters("String UserName");
+    	q.setFilter("UserName==name");
+    	q.declareParameters("String name");
     	return (List<User>)q.execute(name);
     }
 	
-    public List<User> getUser()
+    @SuppressWarnings("unchecked")
+	public List<User> getUser()
     {
     	javax.jdo.Query q = pm.newQuery(User.class);
     	return (List<User>)q.execute();
     }
 
 
-	public boolean checkUser(String UserName, String password) 
+	@SuppressWarnings("unchecked")
+	public boolean checkUser(String UserNameToCheck, String password) 
 	{
 		javax.jdo.Query q = pm.newQuery(User.class);
-		q.setFilter("name==UserName");
-		q.declareParameters("String UserName");
+		q.setFilter("UserName==UserNameToCheck");
+		q.declareParameters("String UserNameToCheck");
 		List<User> list;
-		list = (List<User>)q.execute(UserName);
+		list = (List<User>)q.execute(UserNameToCheck);
 
-		if(list != null) {
+		if(!list.isEmpty()) {
 			User u = list.get(0);
 
 			if(password.equals(u.getPassword())) {	//password ok

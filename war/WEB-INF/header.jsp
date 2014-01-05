@@ -47,7 +47,12 @@ $(document).ready(function()
 					<input name="q" type="text" size="30" placeholder="חיפוש..." />
 					&nbsp;&nbsp;&nbsp; <b><a href="signUp">הרשמה</a></b>
 					&nbsp;&nbsp;&nbsp; <b><a href="professional">הרשמה לבעלי מקצוע</a></b> 
+				
+				<%if(session.getAttribute("userName")==null) {%>
 					&nbsp;&nbsp;&nbsp; <b><a href="login">התחברות</a></b>
+					<% }else{ %>
+					&nbsp;&nbsp;&nbsp; <b><a href="logout">התנתק</a></b>
+					<%} %>
 
 				</form>
 			</div>

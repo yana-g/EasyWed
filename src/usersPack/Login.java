@@ -18,13 +18,6 @@ import dbManager.DataBaseManager;
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public Login() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 
 	/**
@@ -51,20 +44,31 @@ public class Login extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		if (userName.equals("") || password.equals("")) {
+		if (userName.equals("") || password.equals(""))
+		{
 			out.println("Enter a username and password.");
 		}
-
-		else if (DataBaseManager.getInstance().checkUser(userName, password)) {
+	else if (DataBaseManager.getInstance().checkUser(userName, password) == true)
+		{
+			System.out.println("logged in as " + userName);
+			
 			String sessionID = UUID.randomUUID().toString();
 			session.setAttribute("userName", userName);
 			session.setAttribute("sessionID", sessionID);
+			System.out.println("the userName is " + userName.toString());
+			//System.out.println("the password is " + password.toString());
+
 		}
 
-		else {
+		else 
+		{
+			System.out.println("login failed");
 			out.println("Either your username or password is incorrect or could not be found.");
 			out.println("Please try again, or click the link below to register.");
 		}
+		response.sendRedirect("profile");
+
 	}
+
 
 }

@@ -16,7 +16,7 @@
 
 	<servlet>
 		<servlet-name>Login</servlet-name>
-		<servlet-class>usersPack.Login</servlet-class>
+		<servlet-class>usersPack.Login</servlet-class> <!--    .java -->
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>

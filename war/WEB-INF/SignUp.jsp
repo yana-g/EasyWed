@@ -15,7 +15,7 @@
 
 		<h2>&nbsp;הרשמה:</h2>
 
-		<form id="contact" action="thankYou" method="post">
+		<form id="contact" action="Registration" method="post">
 
 			<div class="form_settings">
 				

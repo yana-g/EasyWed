@@ -4,6 +4,22 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+ 
+<!--
+		String userName = request.getParameter("username");
+		String password = request.getParameter("pwd");
+		if(userName != null && password != null)
+			{
+			
+				if(DataBaseManager.checkUser(userName, password) == true)
+				{
+					//session.setAttribute("currStudent", userName);
+                    String redirectURL = "profile.jsp";
+                    response.sendRedirect(redirectURL);  
+				}
+			}
+-->
+ 
 <!DOCTYPE html>
 
 <%@ include file="header.jsp"%>
@@ -15,7 +31,7 @@
 
 		<h2>&nbsp;כניסה למערכת:</h2>
 
-		<form id="contact" action="Index.jsp" method="post">
+		<form id="contact" action="LogedIn" method="post">
 			<div class="form_settings">
 
 				<input type="text" name="username" id="username" class="textBox"

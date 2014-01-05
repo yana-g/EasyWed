@@ -1,12 +1,15 @@
 package usersPack;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import java.io.PrintWriter;
+
 import usersPack.User;
 import dbManager.DataBaseManager;
 
@@ -42,7 +45,7 @@ public class Registration extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
 	{
-		PrintWriter out = response.getWriter();
+//		PrintWriter out = response.getWriter();
 
 		Object firstName = request.getParameter("firstName");
 		Object lastName = request.getParameter("lastName");
@@ -77,7 +80,8 @@ public class Registration extends HttpServlet {
 			out.println("Your password and confirm password does not match.");
 		}
 */
-		if (userName != null && firstName != null && lastName != null && mail != null && password != null) {
+		if (userName != null && firstName != null && lastName != null && mail != null && password != null) 
+		{
 
 			User newUser = new User();
 			newUser.setUserName(userName.toString());
@@ -86,11 +90,11 @@ public class Registration extends HttpServlet {
 			newUser.setMail(mail.toString());
 			newUser.setPassword(password.toString());
 
-			session.setAttribute("userName", newUser.getUserName());
+			session.setAttribute("username", newUser.getUserName());
 
 			DataBaseManager.getInstance().insertNewUser(newUser);
 		}
-		response.sendRedirect("ThankYou");
+		response.sendRedirect("thankYou");
 	}
 
 }
