@@ -11,7 +11,7 @@
 <!-- begin content -->
 <div id="site_content">
 
-	<div class="content2">
+	<div class="content1">
 		<h7>!Thank You</h7>
 
 		<%
@@ -70,7 +70,7 @@
 				<td><%=item.getMail()%></td>
 				<% System.out.println(item.getMail()); %>
 				<% if(item.getPassword() == null)
-					System.out.println("password is null"); %>		
+					System.out.println("password is null"); %>
 				<td><%=item.getPassword()%></td>
 				<% System.out.println(item.getPassword()); %>
 
@@ -82,11 +82,11 @@
 			%>
 
 		</table>
-
-
+		<%session.getAttribute("userName"); %>
 	</div>
 
 </div>
+
 <!-- end content -->
 
 <%@ include file="footer.jsp"%>

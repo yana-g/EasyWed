@@ -13,13 +13,16 @@
 <!-- begin content -->
 <div id="site_content">
 
-	<div id="searchIndex">
+	<div id="searchIndex" >
+	
 		<h2>&nbsp;הרשמת בעלי מקצוע לאתר:</h2>
-
+		
+		<form id="contact" action="ProRegistration" method="post">
+		
 		<div class="form_settings">
-			<form>
+			
 				<p>מקצוע:</p>
-				<select id="profession" class="comboBox">
+				<select id="profession" name="profession" class="comboBox">
 					<option selected>בחר</option>
 					<option>צלם</option>
 					<option>מעצב פרחים</option>
@@ -35,14 +38,14 @@
 				<p>
 					שם העסק:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="text" name="firstName" id="firstName" class="textBox"
+					<input type="text" name="businessName" id="businessName" class="textBox"
 						required="required" placeholder="שם העסק..." />
 				</p>
 
 				<p>
 					שם פרטי:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="text" name="lastName" id="lastName" class="textBox"
+					<input type="text" name="firstName" id="firstName" class="textBox"
 						placeholder="שם פרטי..." />
 				</p>
 
@@ -68,7 +71,7 @@
 				</p>
 
 				<p>עיר:</p>
-				<select id="city" class="comboBox">
+				<select id="city" name="city" class="comboBox">
 					<option selected>בחר</option>
 					<option>ירושלים</option>
 					<option>תל-אביב</option>
@@ -87,7 +90,7 @@
 				<p>
 					שם משתמש:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="text" name="username" id="username" class="textBox"
+					<input type="text" name="userName" id="userName" class="textBox"
 						required="required" placeholder="שם משתמש..." />
 				</p>
 
@@ -111,11 +114,12 @@
 					<span>&nbsp;</span><input class="submit" type="submit" name="name"
 						value="Submit" />
 				</p>
+				</div>
 			</form>
 			<br>
 		</div>
 	</div>
 
-</div>
+
 
 <%@ include file="footer.jsp"%>

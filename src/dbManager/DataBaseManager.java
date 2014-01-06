@@ -66,6 +66,50 @@ public final class DataBaseManager
 		return false;		
 	}
 	
+	public void insertNewPro(UserProfessionnal p)
+	{
+		pm.makePersistent(p);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<UserProfessionnal> getUserByPName(String name)
+    {
+    	System.out.println("getting user " + name);
+    	javax.jdo.Query q = pm.newQuery(UserProfessionnal.class);
+    	q.setFilter("userName==name");
+    	q.declareParameters("String name");
+    	return (List<UserProfessionnal>)q.execute(name);
+    }
+	
+    @SuppressWarnings("unchecked")
+	public List<UserProfessionnal> getUserPro()
+    {
+    	javax.jdo.Query q = pm.newQuery(UserProfessionnal.class);
+    	return (List<UserProfessionnal>)q.execute();
+    }
+
+
+	@SuppressWarnings("unchecked")
+	public boolean checkPro(String ProNameToCheck, String password) 
+	{
+		javax.jdo.Query q = pm.newQuery(UserProfessionnal.class);
+		q.setFilter("userName==ProNameToCheck");
+		q.declareParameters("String UserNameToCheck");
+		List<UserProfessionnal> list;
+		list = (List<UserProfessionnal>)q.execute(ProNameToCheck);
+
+		if(!list.isEmpty()) {
+			UserProfessionnal p = list.get(0);
+
+			if(password.equals(p.getPassword())) {	//password ok
+				return true;
+			} 
+		}
+
+		return false;		
+	}
+	
+	
 	
 	
 }

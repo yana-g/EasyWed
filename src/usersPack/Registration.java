@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.io.PrintWriter;
+import java.util.UUID;
 
 import usersPack.User;
 import dbManager.DataBaseManager;
@@ -94,6 +95,12 @@ public class Registration extends HttpServlet {
 
 			DataBaseManager.getInstance().insertNewUser(newUser);
 		}
+		System.out.println("logged in as " + userName);
+		
+		String sessionID = UUID.randomUUID().toString();
+		session.setAttribute("userName", userName);
+		session.setAttribute("sessionID", sessionID);
+		System.out.println("the userName is " + userName.toString());
 		response.sendRedirect("thankYou");
 	}
 
