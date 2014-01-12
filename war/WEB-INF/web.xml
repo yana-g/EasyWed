@@ -177,6 +177,16 @@
 		<url-pattern>/ProRegistration</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>UploadServlet</servlet-name>
+		<servlet-class>uploadPack.UploadServ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadServlet</servlet-name>
+		<url-pattern>/UploadServ</url-pattern>
+	</servlet-mapping>
+
+
 	<!-- Default page to serve -->
 	<welcome-file-list>
 		<welcome-file>WEB-INF/Index.jsp</welcome-file>

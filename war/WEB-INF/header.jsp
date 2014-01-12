@@ -87,13 +87,12 @@
 			<div id="menu_container" align="left">
 				<ul class="sf-menu" id="nav">
 
-					<li><a href="contact"><font face="Antiochus">צור
-								קשר</font></a></li>
-					<li><a href="upload"><font face="Antiochus">העלאת
-								מודעה</font></a></li>
-					<li><a href="profile"><font face="Antiochus">פרופיל</font></a></li>
-					<li><a href="index"><font face="Antiochus">עמוד
-								הבית</font></a></li>
+					<li><b><a href="contact">צור
+								קשר</a></b></li>
+					<li><b><a href="upload">העלאת
+								מודעה</a></b></li>
+					<li><b><a href="profile"><font face ="cafe" size = "6">פרופיל</font></a></b></li>
+					<li><b><a href="index"><font color="#F3C6D2">עמוד הבית</font></a></b></li>
 
 				</ul>
 			</div>

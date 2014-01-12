@@ -1,5 +1,6 @@
 package dbManager;
 import usersPack.*;
+import uploadPack.*;
 
 import java.util.List;
 
@@ -108,6 +109,28 @@ public final class DataBaseManager
 
 		return false;		
 	}
+	
+	public void insertNewUpload(UploadForm s)
+	{
+		pm.makePersistent(s);
+	}
+	
+	public List<UploadForm> getEventByName(String name)
+	{
+		System.out.println("getting user " + name);
+		javax.jdo.Query q = pm.newQuery(UploadForm.class);
+		q.setFilter("name == UserName");
+		q.declareParameters("String UserName");
+		return (List<UploadForm>)q.execute(name);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<UploadForm> getEvent()
+	{
+		javax.jdo.Query q = pm.newQuery(UploadForm.class);
+		return (List<UploadForm>)q.execute();
+	}
+
 	
 	
 	

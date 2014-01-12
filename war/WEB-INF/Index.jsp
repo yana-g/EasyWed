@@ -12,7 +12,55 @@
 
 <!-- begin content -->
 <div id="site_content">
+	<div id="slideShow">
 
+		<h8>Welcome to Wed4u</h8>
+
+
+		<script id="slideShow" type="text/javascript">
+			var image1 = new Image()
+			image1.src = "images/wedding77.jpg"
+			var image2 = new Image()
+			image2.src = "images/Wedding-Cake.jpg"
+			var image3 = new Image()
+			image3.src = "images/wedding6.jpg"
+			var image4 = new Image()
+			image4.src = "images/rotator-wedding-61.jpg"
+			var image5 = new Image()
+			image5.src = "images/wedding1.jpg"
+			var image6 = new Image()
+			image6.src = "images/wedding2.jpeg"
+			var image7 = new Image()
+			image7.src = "images/wedding10.jpg"
+			var image8 = new Image()
+			image8.src = "images/wedding3.jpg"
+				var image9 = new Image()
+			image9.src = "images/wedding5.jpg"
+		</script>
+
+		<!-- </head> -->
+		<!-- <body>  -->
+		<p>
+			<img src="images/pentagg.jpg" width="890" height="350" name="slide"/>
+		</p>
+		<script type="text/javascript">
+			var step = 1;
+			function slideit() {
+				document.images.slide.src = eval("image" + step + ".src");
+				if (step < 9)
+					step++;
+				else
+					step = 1;
+				setTimeout("slideit()", 5000);
+			}
+			slideit();
+		</script>
+		<!-- </body>  -->
+
+
+
+
+	</div>
 	<div id="searchIndex">
 		<h2>&nbsp; מה אתם מחפשים?</h2>
 
