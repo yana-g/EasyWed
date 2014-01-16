@@ -53,7 +53,7 @@ public class Login extends HttpServlet {
 			System.out.println("logged in as " + userName);
 			
 			String sessionID = UUID.randomUUID().toString();
-			session.setAttribute("userName", userName);
+			session.setAttribute("username", userName);
 			session.setAttribute("sessionID", sessionID);
 			System.out.println("the userName is " + userName.toString());
 			//System.out.println("the password is " + password.toString());

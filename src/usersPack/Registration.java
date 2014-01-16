@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.UUID;
 
 import usersPack.User;
@@ -64,23 +65,6 @@ public class Registration extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 
-/*		if (userName.equals("") || firstName.equals("") || lastName.equals("") || mail.equals("")) {
-			Integer registerError = Integer.valueOf(1);
-			session.setAttribute("registerError", registerError);
-			out.println("One of the Mandatary field is empty");
-		}
-
-		if (password.equals("") || confPassword.equals("")) {
-			Integer registerError = Integer.valueOf(1);
-			session.setAttribute("registerError", registerError);
-			out.println("Please enter a valid password.");
-		}
-		else if (!password.equals(confPassword)) {
-			Integer registerError = Integer.valueOf(2);
-			session.setAttribute("registerError", registerError);
-			out.println("Your password and confirm password does not match.");
-		}
-*/
 		if (userName != null && firstName != null && lastName != null && mail != null && password != null) 
 		{
 
@@ -90,7 +74,12 @@ public class Registration extends HttpServlet {
 			newUser.setLastName(lastName.toString());
 			newUser.setMail(mail.toString());
 			newUser.setPassword(password.toString());
-
+			
+			List<User> list=DataBaseManager.getInstance().getUserByName(newUser.getUserName());
+			if(list.size()!=0){
+				response.sendRedirect("UserExist");
+				return;
+			}
 			session.setAttribute("username", newUser.getUserName());
 
 			DataBaseManager.getInstance().insertNewUser(newUser);
@@ -98,9 +87,9 @@ public class Registration extends HttpServlet {
 		System.out.println("logged in as " + userName);
 		
 		String sessionID = UUID.randomUUID().toString();
-		session.setAttribute("userName", userName);
+		session.setAttribute("username", userName);
 		session.setAttribute("sessionID", sessionID);
-		System.out.println("the userName is " + userName.toString());
+		System.out.println("the user name is " + userName.toString());
 		response.sendRedirect("thankYou");
 	}
 

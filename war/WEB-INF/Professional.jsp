@@ -12,15 +12,15 @@
 
 <!-- begin content -->
 <div id="site_content">
+	<br>
+	<div id="searchIndex">
 
-	<div id="searchIndex" >
-	
 		<h2>&nbsp;הרשמת בעלי מקצוע לאתר:</h2>
-		
+
 		<form id="contact" action="ProRegistration" method="post">
-		
-		<div class="form_settings">
-			
+
+			<div class="form_settings">
+
 				<p>מקצוע:</p>
 				<select id="profession" name="profession" class="comboBox">
 					<option selected>בחר</option>
@@ -38,8 +38,8 @@
 				<p>
 					שם העסק:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="text" name="businessName" id="businessName" class="textBox"
-						required="required" placeholder="שם העסק..." />
+					<input type="text" name="businessName" id="businessName"
+						class="textBox" required="required" placeholder="שם העסק..." />
 				</p>
 
 				<p>
@@ -114,11 +114,12 @@
 					<span>&nbsp;</span><input class="submit" type="submit" name="name"
 						value="Submit" />
 				</p>
-				</div>
-			</form>
-			<br>
-		</div>
+			</div>
+		</form>
+		<br>
 	</div>
+	
+</div>
 
 
 

@@ -1,6 +1,6 @@
 <%@page import="dbManager.DataBaseManager"%>
 <%@page import="usersPack.User"%>
-<%@page import="java.util.List;"%>
+<%@page import="java.util.List"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -18,7 +18,7 @@
 		
 		//System.out.println("DEBUG1");
 		List<User>list;
-		if (session.getAttribute("userName") == null)
+		if (session.getAttribute("username") == null)
 		{
 			//System.out.println("DEBUG2");
 			list = DataBaseManager.getInstance().getUser();
@@ -82,7 +82,7 @@
 			%>
 
 		</table>
-		<%session.getAttribute("userName"); %>
+		<%session.getAttribute("username"); %>
 	</div>
 
 </div>

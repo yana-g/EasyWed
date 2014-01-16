@@ -1,31 +1,62 @@
 package uploadPack;
 
 import javax.jdo.annotations.PersistenceCapable;
+
 import usersPack.*;
+
 import javax.jdo.annotations.Persistent;
 import javax.jdo.annotations.PrimaryKey;
-
+@PersistenceCapable
 public class UploadForm {
 
+	@Persistent
+	static int _id=0;
+	
 	@PrimaryKey
-	private String username;
+	@Persistent
+	public String id;
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	@Persistent
+	public String username;
 	
 	@Persistent
-	private String city;
+	public String city;
 	@Persistent
-	private String day;
+	public String day;
 	@Persistent
-	private String month;
+	public String month;
 	@Persistent
-	private String year;
+	public String year;
 	@Persistent
-	private String ballroom;
+	public String ballroom;
 	@Persistent
-	private String makeUp;
+	public String makeUp;
 	@Persistent
-	private String photographer;
+	public String photographer;
 	@Persistent
-	private String dj;
+	public String dj;
+	
+	
+	public UploadForm() {
+		super();
+		this.id=(_id++) + "";
+		this.username = null;
+		this.city = null;
+		this.day = null;
+		this.month = null;
+		this.year = null;
+		this.ballroom = null;
+		this.makeUp = null;
+		this.photographer = null;
+		this.dj = null;
+	}
 	
 	public String getCity() {
 		return city;

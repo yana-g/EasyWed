@@ -60,11 +60,11 @@
 				<p align="left" style="padding: 15px 400px 15px">
 					<input class="submit" type="submit" name="name" value="SignUp" />
 				</p>
-
-				<p align="left" style="padding: 15px 400px 15px">
+			 
+				<!-- <p align="left" style="padding: 15px 400px 15px">
 					<input class="submitFB" type="submit" name="name"
 						value="SignUp through Facebook" />
-				</p>
+				</p> -->
 			</div>
 		</form>
 	</div>

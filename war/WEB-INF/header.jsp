@@ -6,8 +6,8 @@
 
 <%
 	String isLoggedIn = (session.getAttribute("login") == null
-			? "no"
-			: session.getAttribute("login").toString());
+	? "no"
+	: session.getAttribute("login").toString());
 %>
 <!DOCTYPE HTML>
 
@@ -43,7 +43,6 @@
 		<div id="logo">
 
 			<div id="logo_text">
-				<!-- class="logo_colour", allows you to change the color of the text -->
 				<h1>
 					<a href="index">Wed4U</a>
 				</h1>
@@ -51,48 +50,50 @@
 
 			<div class="searchBar">
 				<form method="get" action="/search" id="search">
-					<input name="q" type="text" size="30" placeholder="חיפוש..." />
+					<!-- <input name="q" type="text" size="30" placeholder="חיפוש..." />  -->
+					
+					<%
+						if (session.getAttribute("username") == null) {
+					%>
+					
 					&nbsp;&nbsp;&nbsp; <b><a href="signUp">הרשמה</a></b>
 					&nbsp;&nbsp;&nbsp; <b><a href="professional">הרשמה לבעלי
 							מקצוע</a></b>
-
-					<%
-						if (session.getAttribute("userName") == null) {
-					%>
 					&nbsp;&nbsp;&nbsp; <b><a href="login">התחברות</a></b>
+				
+
+					
 					<%
 						} else {
 					%>
 
 					&nbsp;&nbsp;&nbsp; <b><a href="logout">התנתק</a></b>
-					&nbsp;&nbsp;&nbsp; <b><%  List<User>list;
-	list = DataBaseManager.getInstance().getUserByName(session.getAttribute("userName").toString());
-	for (User item : list)
-	{ 
-	
-		out.println("שלום " + item.getFirstName() + " " + item.getLastName()+ "");
-	}%></b>
+					&nbsp;&nbsp;&nbsp; <b>
+						<%
+							List<User> list;
+								list = DataBaseManager.getInstance().getUserByName(session.getAttribute("username").toString());
+								for (User item : list) 
+								{
 
-					<%
-						}
-					%>
+									out.println("שלום " + item.getFirstName() + " "+ item.getLastName() + "");
+								}
+						%>
+					</b>
 
-
+					<% } %>
 				</form>
 			</div>
 
 		</div>
-		
+
 		<nav>
 			<div id="menu_container" align="left">
 				<ul class="sf-menu" id="nav">
 
-					<li><b><a href="contact">צור
-								קשר</a></b></li>
-					<li><b><a href="upload">העלאת
-								מודעה</a></b></li>
-					<li><b><a href="profile"><font face ="cafe" size = "6">פרופיל</font></a></b></li>
-					<li><b><a href="index"><font color="#F3C6D2">עמוד הבית</font></a></b></li>
+					<li><b><a href="contact"><font face="choco" size="5">צור קשר</font></a></b></li>
+					<li><b><a href="upload"><font face="choco" size="5">העלאת מודעה</font></a></b></li>
+					<li><b><a href="profile"><font face="choco" size="5">פרופיל</font></a></b></li>
+					<li><b><a href="index"><font face="choco" size="5">עמוד הבית</font></a></b></li>
 
 				</ul>
 			</div>

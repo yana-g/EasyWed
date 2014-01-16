@@ -14,6 +14,24 @@
 		<url-pattern>/Registration</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>searchPack.SearchServ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/SearchServ</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteUpload</servlet-name>
+		<servlet-class>uploadPack.DelUploadServ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteUpload</servlet-name>
+		<url-pattern>/DelUpload</url-pattern>
+	</servlet-mapping>
+	
 
 	<servlet>
 		<servlet-name>Login</servlet-name>
@@ -23,15 +41,9 @@
 		<servlet-name>Login</servlet-name>
 		<url-pattern>/LogedIn</url-pattern>
 	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>Search</servlet-name>
-		<servlet-class>searchPack.Search</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Search</servlet-name>
-		<url-pattern>/SearchRes</url-pattern>
-	</servlet-mapping>
+	
+	
+	
 
 	<servlet>
 		<servlet-name>IndexPage</servlet-name>
@@ -184,6 +196,25 @@
 	<servlet-mapping>
 		<servlet-name>UploadServlet</servlet-name>
 		<url-pattern>/UploadServ</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>UserExist</servlet-name>
+		<jsp-file>/WEB-INF/UsernameExist.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserExist</servlet-name>
+		<url-pattern>/UserExist</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchResult</servlet-name>
+		<jsp-file>/WEB-INF/SearchResults.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchResult</servlet-name>
+		<url-pattern>/searchResult</url-pattern>
 	</servlet-mapping>
 
 

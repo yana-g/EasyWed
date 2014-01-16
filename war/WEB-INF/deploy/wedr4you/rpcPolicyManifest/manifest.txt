@@ -1,2 +1,3 @@
 # Module wedr4you
 # RPC service class, partial path of RPC policy file
+wed4you.client.GreetingService, 9DC15CAC937F04EB0B89D7D95955A262.gwt.rpc
