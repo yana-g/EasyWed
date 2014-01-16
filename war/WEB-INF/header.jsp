@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="dbManager.DataBaseManager"%>
-<%@page import="usersPack.User"%>
+<%@page import="usersPack.*"%>
 
 <%
 	String isLoggedIn = (session.getAttribute("login") == null
@@ -90,10 +90,11 @@
 			<div id="menu_container" align="left">
 				<ul class="sf-menu" id="nav">
 
-					<li><b><a href="contact"><font face="choco" size="5">צור קשר</font></a></b></li>
-					<li><b><a href="upload"><font face="choco" size="5">העלאת מודעה</font></a></b></li>
-					<li><b><a href="profile"><font face="choco" size="5">פרופיל</font></a></b></li>
-					<li><b><a href="index"><font face="choco" size="5">עמוד הבית</font></a></b></li>
+					<li><b><a href="contact"><font face="choco" size="6">צור קשר</font></a></b></li>
+					<li><b><a href="upload"><font face="choco" size="6">העלאת מודעה</font></a></b></li>
+					<li><b><a href="profile"><font face="choco" size="6">פרופיל</font></a></b></li>
+					<li><b><a href="search"><font face="choco" size="6">חיפוש</font></a></b></li>
+					<li><b><a href="index"><font face="choco" size="6">עמוד הבית</font></a></b></li>
 
 				</ul>
 			</div>

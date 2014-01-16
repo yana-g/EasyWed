@@ -58,18 +58,9 @@ h7{
   letter-spacing: 0em;
   padding: 0 0 5px 0;
   text-align: left;	
-  color: #F5A9BC;
+   color: #F5A9BC;
   padding: 0 0 5px 0;
-  font: normal 360% 'Jenna Sue', arial, sans-serif;
-}
-h8
-{
-  letter-spacing: 0em;
-  padding: 0 0 5px 0;
-  text-align: center;	
-  color: #F5A9BC;
-  padding: 0 0 5px 0;
-  font: normal 360% 'Jenna Sue', arial, sans-serif;
+  font: normal 250% 'Jenna Sue', arial, sans-serif;
 }
 
 h1, h2, h3 { 
@@ -109,7 +100,7 @@ h5 {
 a, a:hover { 
   outline: none;
   text-decoration: underline;
-  color: #F5A9BC; /*  F5E4E8*/
+  color: #F5A9BC;
 }
 
 a:hover { 
@@ -193,15 +184,18 @@ ol li {
   -moz-border-radius: 13px 13px 13px 13px;
   -webkit-border: 13px 13px 13px 13px;
 	background: transparent  url(../images/main.png) ;
+ /* 	padding-bottom: 30px;
+	margin-right: 10px;*/
 	margin-left: 110px;
-	margin-top: auto;
+	/*margin-bottom: 0px;*/
+	/*margin-top: -165px;*/
 	background: #FFF5EE;
 	padding: 20px;
 	opacity: 0.9;
 }
 .searchIndex h3, .content h1 { 
   padding: 5px 0 20px 0;
-  font: 200% 'News Cycle', arial, sans-serif; /* ////////// 200 = 100 */
+  font: 200% 'News Cycle', arial, sans-serif;
   text-shadow:  #000 1px 1px;
   margin: 0 1px;
   color: #FFF;
@@ -297,7 +291,7 @@ nav {
   background: #675B42; /* Show a solid color for older browsers */
   background: -moz-linear-gradient(#9C8563, #675B42);
   background: -o-linear-gradient(#9C8563, #675B42);
-  background: -webkit-linear-gradient(#FEF0FF, #EEECE8); 
+  background: -webkit-linear-gradient(#9C8563, #675B42);
   border: 1px solid #483F2C;
   border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
@@ -309,29 +303,12 @@ nav {
   margin: 0 auto 0 auto;
 }
 
-#site_content 
-{ 
+#site_content { 
   width: 930px;
   overflow: hidden;
   margin: 0px auto 0 auto;
   padding: 15px 0 15px 0;
 } 
-#slideShow
-{
-	margin: 50px auto;
-	float: none;
-	width: 890px;
-	height: 400px;
-	background: none;
-	border-radius: 13px 13px 13px 13px;
-  -moz-border-radius: 13px 13px 13px 13px;
-  -webkit-border: 13px 13px 13px 13px;
-	margin-left: 110px;
-	margin-top: 5px;
-	padding: 20px;
-	opacity: 0.9;
-	
-}
 
 #sidebar_container { 
   float: left;
@@ -343,8 +320,8 @@ nav {
   float: right;
   width: 200px;
   margin: 0 0 0px 0;
-  background:  #675B42; /* <!-- #FFF8DC;--> */
-
+  background:  #675B42; <!-- #FFF8DC;-->
+ -->
   border: 1px solid #242808;
   -webkit-border-radius: 13px 13px 13px 13px; 
   -moz-border-radius: 13px 13px 13px 13px;
@@ -574,6 +551,7 @@ table tr td {
 }
 
 
+
 /* Configuration of menu width */
 html body ul.sf-menu ul,html body ul.sf-menu ul li { 
   width: 240px;
@@ -678,9 +656,9 @@ ul#nav ul {
 
 ul#nav li a { 
   padding:8px 20px 6px 20px;
-  font: 300% , arial, sans-serif;
+  font: 240% 'Jenna Sue', arial, sans-serif;
   text-decoration: none;
-  /*color: #FFF;*/
+  color: #FFF;
   margin-right: 2px;
 }
 

@@ -198,16 +198,6 @@
 		<url-pattern>/UploadServ</url-pattern>
 	</servlet-mapping>
 
-
-	<servlet>
-		<servlet-name>UserExist</servlet-name>
-		<jsp-file>/WEB-INF/UsernameExist.jsp</jsp-file>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>UserExist</servlet-name>
-		<url-pattern>/UserExist</url-pattern>
-	</servlet-mapping>
-
 	<servlet>
 		<servlet-name>SearchResult</servlet-name>
 		<jsp-file>/WEB-INF/SearchResults.jsp</jsp-file>
@@ -217,7 +207,15 @@
 		<url-pattern>/searchResult</url-pattern>
 	</servlet-mapping>
 
-
+	<servlet>
+		<servlet-name>SearchEvent</servlet-name>
+		<jsp-file>/WEB-INF/Search.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchEvent</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+	
 	<!-- Default page to serve -->
 	<welcome-file-list>
 		<welcome-file>WEB-INF/Index.jsp</welcome-file>

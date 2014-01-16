@@ -30,9 +30,9 @@
 				</p>
 			
 				<p style="padding: 15px 400px 15px">
-					<a href="signUp"><h2>משתמש חדש? הרשם כאן</h2></a>
+					<a href="signUp"><p>משתמש חדש?</p></a>
 					
-					<a href="professional"><h2>איש מקצוע חדש? לחץ כאן</h2></a>
+					<a href="professional"><p>איש מקצוע חדש?</p></a>
 				</p>
 				
 			</div>

@@ -34,6 +34,11 @@
 					<option value="-">-עיר-</option>
 					<option value="Jerusalem">ירושלים</option>
 					<option value="Tel-Aviv">תל-אביב</option>
+					<option value="Haifa">חיפה</option>
+					<option value="Hadera">חדרה</option>
+					<option value="Herzliya">הרצליה</option>
+					<option value="Petah-Tikva">פתח תקווה</option>
+					<option value="Modi'in">מודיעין</option>
 					<option value="other">אחר</option>
 				</select> &nbsp;&nbsp;&nbsp; <input type="text" placeholder="עיר..."
 					name="other_city">
@@ -96,9 +101,13 @@
 				<p>אולם:</p>
 				<select name="ballroom">
 					<option value="-">-בחר-</option>
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
+					<option value="Rimonim">רימונים</option>
+					<option value="Haahuzah">האחוזה</option>
+					<option value="Al-Hayam">על הים</option>
+					<option value="Villa Socca">וילה סוקה</option>
+					<option value="Troya-Garden">טרויה</option>
+					<option value="Caselio">קסליו</option>
+					<option value="Cassiopeia">קסיופאה</option>
 					<option value="other">אחר</option>
 				</select> &nbsp;&nbsp;&nbsp; <input type="text" placeholder="אולם..."
 					name="other_ballroom">
@@ -106,9 +115,11 @@
 				<p>מאפר:</p>
 				<select name="makeUp">
 					<option value="-">-בחר-</option>
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
+					<option value="Alona Bell">אלונה בל</option>
+					<option value="Barak Ben-Hayun">ברק בן חיון</option>
+					<option value="Tali Power">טלי פאוור</option>
+					<option value="Yaniv Harel">יניב הראל</option>
+					<option value="Kelly Dolev">קלי דולב</option>
 					<option value="other">אחר</option>
 				</select> &nbsp;&nbsp;&nbsp; <input type="text" placeholder="מאפר..."
 					name="other_makeUp">
@@ -116,19 +127,23 @@
 				<p>צלם:</p>
 				<select name="photographer">
 					<option value="-">-בחר-</option>
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
+					<option value="AD Studio">AD Studio</option>
+					<option value="Dudu Koren">דודו קורן</option>
+					<option value="ZOOG Productions">זוג הפקות</option>
+					<option value="Mark Berber Photography">Mark Berber -Photography</option>
+					<option value="LOOK Zalamim">צלמים LOOK</option>
 					<option value="other">אחר</option>
 				</select> &nbsp;&nbsp;&nbsp; <input type="text" placeholder="צלם..."
 					name="other_photographer">
 
-				<p>DJ:</p>
+				<p>מוזיקה:</p>
 				<select name="dj">
 					<option value="-">-בחר-</option>
-					<option value="A">A</option>
-					<option value="B">B</option>
-					<option value="C">C</option>
+					<option value="DJS">DJS ליסט הפקות</option>
+					<option value="DJ-Aristo">DJ Aristo</option>
+					<option value="Elephant-DJs">Elephant DJs</option>
+					<option value="Silence">Silence</option>
+					<option value="Vision">Vision</option>
 					<option value="other">אחר</option>
 				</select> &nbsp;&nbsp;&nbsp; <input type="text" placeholder="DJ..."
 					name="other_dj"> <br>
