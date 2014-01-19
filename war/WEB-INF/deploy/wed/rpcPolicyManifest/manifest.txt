@@ -1,3 +1,2 @@
 # Module wed
 # RPC service class, partial path of RPC policy file
-wed.client.GreetingService, C46CCE4CE5AF3BF636A3094FDBC316FC.gwt.rpc
