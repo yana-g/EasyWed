@@ -62,6 +62,12 @@ public class Registration extends HttpServlet {
 			response.sendRedirect("signUp");
 			return;
 		}
+		if(((String) mail).indexOf("@")==-1)
+		{
+			System.out.println("login failed - chack your mail");
+			response.sendRedirect("signUp");
+			return;		
+		}
 		System.out.println("the firstName is " + firstName.toString());
 		System.out.println("the lastName is " + lastName.toString());
 		System.out.println("the userName is " + userName.toString());

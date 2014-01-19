@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.util.List;
 
 
+import java.util.UUID;
+
+
+
 //import javax.jdo.annotations.Persistent;
 //import javax.jdo.annotations.PrimaryKey;
 //import javax.servlet.ServletException;
@@ -17,6 +21,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+
+
 
 
 
@@ -74,6 +81,18 @@ public class ProRegistration extends HttpServlet {
 		Object password = request.getParameter("pwd");
 		Object confPassword = request.getParameter("conPwd");
 
+		if(!password.equals(confPassword))
+		{
+			System.out.println("login failed - passwords need to be the same");
+			response.sendRedirect("professional");
+			return;
+		}
+		if(mail!=null && ((String) mail).indexOf("@")==-1)
+		{
+			System.out.println("login failed - check your mail!");
+			response.sendRedirect("professional");
+			return;
+		}
 		System.out.println("the profession is " + profession.toString());
 		System.out.println("the businessName is " + businessName.toString());
 		System.out.println("the firstName is " + firstName.toString());
@@ -112,8 +131,11 @@ public class ProRegistration extends HttpServlet {
 
 			DataBaseManager.getInstance().insertNewPro(Professionnal);
 		}
-		response.sendRedirect("thankYouPro");
-	}
+		String sessionID = UUID.randomUUID().toString();
+		session.setAttribute("username", userName);
+		session.setAttribute("sessionID", sessionID);
+		System.out.println("the user name is " + userName.toString());
+		response.sendRedirect("profile");	}
 
 }
 

@@ -3,6 +3,7 @@ package usersPack;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -45,6 +46,19 @@ public class UserAccountSetServ extends HttpServlet {
 		Object password = request.getParameter("pwd");
 		Object confPassword = request.getParameter("conPwd");
 		
+		if(!password.equals(confPassword))
+		{
+			System.out.println("login failed - passwords need to be the same");
+			response.sendRedirect("accountSetForm");
+			return;
+
+		}
+		if(mail!=null && ((String) mail).indexOf("@")==-1)
+		{
+			System.out.println("login failed - check your mail!");
+			response.sendRedirect("accountSetForm");
+			return;
+		}
 		System.out.println("the firstName is " + firstName.toString());
 		System.out.println("the lastName is " + lastName.toString());
 		System.out.println("the mail is " + mail.toString());
