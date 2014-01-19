@@ -20,7 +20,7 @@ public class Tester {
 	 public void setNewUSer()
 	 {
 		 newUser.setFirstName("wed4u");
-         assertEquals(null, newUser.getFirstName());           
+         assertEquals("wed4u", newUser.getFirstName());           
 
 	 }
 	 
