@@ -11,7 +11,7 @@
 %>
 <!DOCTYPE HTML>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="he" lang="he"
+<html xmlns="http://www.w3.org/1999/xhtml" lang="he"
 	dir="rtl">
 
 <head>
@@ -72,10 +72,21 @@
 						<%
 							List<User> list;
 								list = DataBaseManager.getInstance().getUserByName(session.getAttribute("username").toString());
-								for (User item : list) 
-								{
+								if(list.size()==0){
+									List<UserProfessionnal> list1;
+									list1 = DataBaseManager.getInstance().getUserByPName(session.getAttribute("username").toString());
+									for (UserProfessionnal item : list1) 
+									{
 
-									out.println("שלום " + item.getFirstName() + " "+ item.getLastName() + "");
+										out.println("שלום " + item.getBusinessName() + " ");
+									}
+								}
+								else{
+									for (User item : list) 
+									{
+	
+										out.println("שלום " + item.getFirstName() + " "+ item.getLastName() + "");
+									}
 								}
 						%>
 					</b>
@@ -91,6 +102,7 @@
 				<ul class="sf-menu" id="nav">
 
 					<li><b><a href="contact"><font face="choco" size="6">צור קשר</font></a></b></li>
+					<li><a href="aboutUs"><font face="choco" size="6">מי אנחנו?</font></a></li>
 					<li><b><a href="upload"><font face="choco" size="6">העלאת מודעה</font></a></b></li>
 					<li><b><a href="profile"><font face="choco" size="6">פרופיל</font></a></b></li>
 					<li><b><a href="search"><font face="choco" size="6">חיפוש</font></a></b></li>

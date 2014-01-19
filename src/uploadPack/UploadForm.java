@@ -16,13 +16,9 @@ public class UploadForm {
 	@Persistent
 	public String id;
 	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
+	
+	
+	
 	@Persistent
 	public String username;
 	
@@ -43,7 +39,12 @@ public class UploadForm {
 	@Persistent
 	public String dj;
 	
+	@Persistent
+	public boolean status;
 	
+	
+	
+
 	public UploadForm() {
 		super();
 		this.id=(_id++) + "";
@@ -56,6 +57,7 @@ public class UploadForm {
 		this.makeUp = null;
 		this.photographer = null;
 		this.dj = null;
+		this.status=false;
 	}
 	
 	public String getCity() {
@@ -103,6 +105,14 @@ public class UploadForm {
 	public String getDj() {
 		return dj;
 	}
+	public String getId() {
+		return id;
+	}
+
+	
+	public void setId(String id) {
+		this.id = id;
+	}
 	public void setDj(String dj) {
 		this.dj = dj;
 	}
@@ -113,4 +123,11 @@ public class UploadForm {
 		this.username = username;
 	}
 	
+	public boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status= status;
+	}
 }

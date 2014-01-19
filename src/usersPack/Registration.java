@@ -56,6 +56,12 @@ public class Registration extends HttpServlet {
 		Object password = request.getParameter("pwd");
 		Object confPassword = request.getParameter("conPwd");
 		
+		if(!password.equals(confPassword))
+		{
+			System.out.println("login failed - passwords need to be the same");
+			response.sendRedirect("signUp");
+			return;
+		}
 		System.out.println("the firstName is " + firstName.toString());
 		System.out.println("the lastName is " + lastName.toString());
 		System.out.println("the userName is " + userName.toString());
@@ -75,9 +81,11 @@ public class Registration extends HttpServlet {
 			newUser.setMail(mail.toString());
 			newUser.setPassword(password.toString());
 			
+			
 			List<User> list=DataBaseManager.getInstance().getUserByName(newUser.getUserName());
-			if(list.size()!=0){
-				response.sendRedirect("UserExist");
+			if(list.size()!=0)
+			{
+				response.sendRedirect("UserExists");
 				return;
 			}
 			session.setAttribute("username", newUser.getUserName());
@@ -90,7 +98,7 @@ public class Registration extends HttpServlet {
 		session.setAttribute("username", userName);
 		session.setAttribute("sessionID", sessionID);
 		System.out.println("the user name is " + userName.toString());
-		response.sendRedirect("thankYou");
+		response.sendRedirect("profile");
 	}
 
 }

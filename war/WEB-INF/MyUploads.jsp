@@ -52,6 +52,7 @@
 				<th>מאפר</th>
 				<th>צלם</th>
 				<th>DJ</th>
+				<th>סטטוס</th>
 				<th></th>
 			</tr>
 			
@@ -92,12 +93,21 @@
 					<% if(item.getDj() == null)
 						System.out.println("dj is null"); %>
 					<td><%=item.getDj()%></td>
+					
+					<% if(item.getStatus() == false){
+						System.out.println("satatus is false"); %>
+						<td><%="Not Sold"%></td>
+						<%} %>
+					<% if(item.getStatus() == true){
+						System.out.println("satatus is true"); %>
+						<td><%="Sold"%></td>
+						<%} %>
 		
 		
 					<td>
 					<p style="padding-top: 15px" class="form_settings">
 					<input class="submit" type="submit" name="id"
-						value="Delete" />
+						value="Delete" onclick="return confirm('Are you sure you want to delete?')"/>
 					<input type="hidden" name="theID" value="<%=item.getId()%>"/>
 				</p>
 					

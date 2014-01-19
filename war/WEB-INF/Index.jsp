@@ -12,7 +12,7 @@
 
 <!-- begin content -->
 <div id="site_content">
-	<div id="slideShow">
+	<div id="slideShow" align="center">
 
 		<center><font color="#F5A9BC" face= "Jenna Sue" size ="20">Welcome to Wed4u</font></center>
 
@@ -50,6 +50,7 @@
 		<p>
 			<img src="images/pentagg.jpg" width="890" height="350" name="slide"/>
 		</p>
+	
 		<script type="text/javascript">
 			var step = 1;
 			function slideit() {

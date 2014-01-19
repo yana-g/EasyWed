@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
 <%@page import="dbManager.DataBaseManager"%>
-<%@page import="usersPack.User"%>
+<%@page import="usersPack.*"%>
 
 
 <!DOCTYPE html>
@@ -34,10 +34,21 @@
 			List<User> list;
 				list = DataBaseManager.getInstance().getUserByName(
 						session.getAttribute("username").toString());
-				for (User item : list) {
+				if(list.size()==0){
+					List<UserProfessionnal> list1;
+					list1 = DataBaseManager.getInstance().getUserByPName(session.getAttribute("username").toString());
+					for (UserProfessionnal item : list1) 
+					{
 
-					out.println("<h2>שלום " + item.getFirstName() + " "
-							+ item.getLastName() + "</h2>");
+						out.println("<h2>שלום " + item.getBusinessName()+"</h2>");
+					}
+				}
+				else{
+					for (User item : list) {
+	
+						out.println("<h2>שלום " + item.getFirstName() + " "
+								+ item.getLastName() + "</h2>");
+					}
 				}
 			}
 		%>

@@ -25,17 +25,17 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
-	{
+			{
 		// TODO Auto-generated method stub
-	}
+			}
 
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException 
-	{
+			{
 
 		PrintWriter out = response.getWriter();
 
@@ -48,10 +48,10 @@ public class Login extends HttpServlet {
 		{
 			out.println("Enter a username and password.");
 		}
-	else if (DataBaseManager.getInstance().checkUser(userName, password) == true)
+		else if (DataBaseManager.getInstance().checkUser(userName, password) == true)
 		{
 			System.out.println("logged in as " + userName);
-			
+
 			String sessionID = UUID.randomUUID().toString();
 			session.setAttribute("username", userName);
 			session.setAttribute("sessionID", sessionID);
@@ -59,6 +59,18 @@ public class Login extends HttpServlet {
 			//System.out.println("the password is " + password.toString());
 
 		}
+		else if (DataBaseManager.getInstance().checkPro(userName, password) == true)
+		{
+			System.out.println("logged in as " + userName);
+
+			String sessionID = UUID.randomUUID().toString();
+			session.setAttribute("username", userName);
+			session.setAttribute("sessionID", sessionID);
+			System.out.println("the userName is " + userName.toString());
+			//System.out.println("the password is " + password.toString());
+
+		}
+
 
 		else 
 		{
@@ -68,7 +80,7 @@ public class Login extends HttpServlet {
 		}
 		response.sendRedirect("profile");
 
-	}
+			}
 
 
 }

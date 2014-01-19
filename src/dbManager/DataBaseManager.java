@@ -1,5 +1,6 @@
 package dbManager;
 import usersPack.*;
+import msgPack.*;
 import uploadPack.*;
 import searchPack.*;
 
@@ -25,17 +26,76 @@ public final class DataBaseManager
 		return instance;
 	}
 
+	
+	public void insertNewMsg(MsgForm s)
+	{
+		pm.makePersistent(s);
+	}
+	
+	
+	public void insertNewOrd(orderObj s)
+	{
+		pm.makePersistent(s);
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<orderObj> getAnsById(String id)
+	{
+		List<orderObj> l;
+		javax.jdo.Query q = pm.newQuery(orderObj.class);
+		
+		q.setFilter("id==theID");/////
+		
+		q.declareParameters("String theID");
+		return (List<orderObj>)q.execute(id);
+	}
 
+	@SuppressWarnings("unchecked")
+	public List<MsgForm> getMsgByName(String name)
+	{
+		List<MsgForm> l;
+		javax.jdo.Query q = pm.newQuery(MsgForm.class);
+		
+		q.setFilter("userNameTo==name");/////
+		
+		q.declareParameters("String name");
+		return (List<MsgForm>)q.execute(name);
+	}
+	
+	
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<orderObj> getOrderByName(String name)
+	{
+		List<orderObj> l;
+		javax.jdo.Query q = pm.newQuery(orderObj.class);
+		
+		q.setFilter("userNameTo==name");///////////////////////
+		
+		q.declareParameters("String name");
+		return (List<orderObj>)q.execute(name);
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<MsgForm> getMsgById(String id)
+	{
+		javax.jdo.Query q = pm.newQuery(MsgForm.class);
+		q.setFilter("id==theID");/////
+		q.declareParameters("String theID");
+		return (List<MsgForm>)q.execute(id);
+	}
+	
 	public void insertNewUser(User s)
 	{
 		pm.makePersistent(s);
 	}
 
-
 	@SuppressWarnings("unchecked")
 	public List<User> getUserByName(String name)
 	{
-		System.out.println("getting user " + name);
 		javax.jdo.Query q = pm.newQuery(User.class);
 		q.setFilter("UserName==name");
 		q.declareParameters("String name");
@@ -78,7 +138,6 @@ public final class DataBaseManager
 	@SuppressWarnings("unchecked")
 	public List<UserProfessionnal> getUserByPName(String name)
 	{
-		System.out.println("getting user " + name);
 		javax.jdo.Query q = pm.newQuery(UserProfessionnal.class);
 		q.setFilter("userName==name");
 		q.declareParameters("String name");
@@ -92,7 +151,7 @@ public final class DataBaseManager
 		return (List<UserProfessionnal>)q.execute();
 	}
 
-
+	
 	@SuppressWarnings("unchecked")
 	public boolean checkPro(String ProNameToCheck, String password) 
 	{
@@ -120,7 +179,6 @@ public final class DataBaseManager
 
 	public List<UploadForm> getEventByName(String name)
 	{
-		System.out.println("getting user " + name);
 		javax.jdo.Query q = pm.newQuery(UploadForm.class);
 		q.setFilter("username==theName");
 		q.declareParameters("String theName");
@@ -128,7 +186,18 @@ public final class DataBaseManager
 		return (List<UploadForm>)q.execute(name);
 
 	}
+	public List<UploadForm> getEventByID(String id)
+	{
+		javax.jdo.Query q = pm.newQuery(UploadForm.class);
+		q.setFilter("id==theID");
+		q.declareParameters("String theID");
+		//System.out.println("123");
+		return (List<UploadForm>)q.execute(id);
 
+	}
+	
+	
+	
 
 	@SuppressWarnings("unchecked")
 	public List<UploadForm> getEvent()
@@ -145,7 +214,6 @@ public final class DataBaseManager
 	
 	public List<SearchForm> getSearchById(String id)
 	{
-		System.out.println("getting id " + id);
 		javax.jdo.Query q = pm.newQuery(SearchForm.class);
 		q.setFilter("id==theId");
 		q.declareParameters("String theId");
@@ -211,7 +279,7 @@ public final class DataBaseManager
 	}
 	
 	
-	
+	@SuppressWarnings("unchecked")
 	public void deleteUpload(String id) 
 	{
 		javax.jdo.Query q = pm.newQuery(UploadForm.class);
@@ -220,4 +288,41 @@ public final class DataBaseManager
 		List<UploadForm> list=(List<UploadForm>)q.execute(id);
 		pm.deletePersistent(list.get(0));
     }
+	
+	@SuppressWarnings("unchecked")
+	public void deleteMsgByFormID(String id) 
+	{
+		javax.jdo.Query q = pm.newQuery(MsgForm.class);
+		q.setFilter("id_form==theID");
+		q.declareParameters("String theID");
+		List<MsgForm> list=(List<MsgForm>)q.execute(id);
+		if(list==null || list.size()==0)
+			return;
+		for(MsgForm item: list)
+			pm.deletePersistent(item);
+    }
+	
+	public void deleteOrderByFormID(String id) 
+	{
+		javax.jdo.Query q = pm.newQuery(MsgForm.class);
+		javax.jdo.Query qtmp;
+		q.setFilter("id_form==theID");
+		q.declareParameters("String theID");
+		List<MsgForm> list=(List<MsgForm>)q.execute(id);
+		List<orderObj> orderList;
+		if(list==null || list.size()==0)
+			return;
+		for(MsgForm msg: list){
+			qtmp= pm.newQuery(orderObj.class);
+			qtmp.setFilter("id_m==theMsgID");
+			qtmp.declareParameters("String theMsgID");
+			orderList=(List<orderObj>)qtmp.execute(msg.getId());
+			if(orderList==null || orderList.size()==0)
+				return;
+			pm.deletePersistent(orderList.get(0));
+		}
+    }
+		
+	
+	
 }

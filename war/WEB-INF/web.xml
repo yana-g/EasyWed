@@ -5,6 +5,57 @@
 	version="2.5" xmlns="http://java.sun.com/xml/ns/javaee">
 
 	<!-- Servlets -->
+
+	<servlet>
+		<servlet-name>SendMessage</servlet-name>
+		<servlet-class>msgPack.SendMessage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SendMessage</servlet-name>
+		<url-pattern>/sendMsg</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AccountSetForm</servlet-name>
+		<jsp-file>/WEB-INF/AccountSetForm.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AccountSetForm</servlet-name>
+		<url-pattern>/accountSetForm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>UserAccountSetServ</servlet-name>
+		<servlet-class>usersPack.UserAccountSetServ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserAccountSetServ</servlet-name>
+		<url-pattern>/UserAccountSetServ</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>AboutUs</servlet-name>
+		<jsp-file>/WEB-INF/AboutUs.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AboutUs</servlet-name>
+		<url-pattern>/aboutUs</url-pattern>
+	</servlet-mapping>
+	
+	
+		<servlet>
+		<servlet-name>sellEventServ</servlet-name>
+		<servlet-class>msgPack.sellEventServ</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sellEventServ</servlet-name>
+		<url-pattern>/sellServ</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
 	<servlet>
 		<servlet-name>Registration</servlet-name>
 		<servlet-class>usersPack.Registration</servlet-class>
@@ -43,7 +94,14 @@
 	</servlet-mapping>
 	
 	
-	
+	<servlet>
+		<servlet-name>UserExists</servlet-name>
+		<jsp-file>/WEB-INF/UsernameExist.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserExists</servlet-name>
+		<url-pattern>/UserExists</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>IndexPage</servlet-name>
@@ -100,6 +158,24 @@
 		<url-pattern>/signUp</url-pattern>
 	</servlet-mapping>
 
+<servlet>
+		<servlet-name>MessageSuccess</servlet-name>
+		<jsp-file>/WEB-INF/MessageSuccess.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MessageSuccess</servlet-name>
+		<url-pattern>/messageSuccess</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SellSuccess</servlet-name>
+		<jsp-file>/WEB-INF/SellSuccess.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SellSuccess</servlet-name>
+		<url-pattern>/sellSuccess</url-pattern>
+	</servlet-mapping>
+	
 	<servlet>
 		<servlet-name>ThankYouPage</servlet-name>
 		<jsp-file>/WEB-INF/ThankYou.jsp</jsp-file>

@@ -23,23 +23,24 @@
 
 				<p>מקצוע:</p>
 				<select id="profession" name="profession" class="comboBox">
-					<option selected>בחר</option>
-					<option>צלם</option>
-					<option>מעצב פרחים</option>
-					<option>בעל אולם אירועים</option>
-					<option>מאפר\ת</option>
-					<option>בעל חברת קייטרינג</option>
-					<option>להקה\DJ</option>
-					<option>מומחה לעיצוב</option>
-					<option>אחר</option>
+					<option value="-">-מקצוע-</option>
+					<option value="photographer">צלם</option>
+					<option value="flourist">מעצב פרחים</option>
+					<option value="ballroom">בעל אולם אירועים</option>
+					<option value="makeupartist">מאפר\ת</option>
+					<option value="catering">בעל חברת קייטרינג</option>
+					<option value="band">להקה\DJ</option>
+					<option value="expert">מומחה לעיצוב</option>
+					<option value="other">אחר</option>
 				</select> &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" placeholder="אחר..."
-					name="other">
+					name="other_profession">
+				<b>*</b>
 
-				<p>
-					שם העסק:
+				<p>שם העסק:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="text" name="businessName" id="businessName"
 						class="textBox" required="required" placeholder="שם העסק..." />
+					<b>*</b>
 				</p>
 
 				<p>
@@ -54,6 +55,7 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="text" name="email" id="email" class="textBox"
 						required="required" placeholder="דואל..." />
+					<b>*</b>
 				</p>
 
 				<p>
@@ -71,14 +73,18 @@
 				</p>
 
 				<p>עיר:</p>
-				<select id="city" name="city" class="comboBox">
-					<option selected>בחר</option>
-					<option>ירושלים</option>
-					<option>תל-אביב</option>
-					<option>חדרה</option>
-					<option>באב-אל חליל</option>
+				<select name="city">
+					<option value="-">-עיר-</option>
+					<option value="Jerusalem">ירושלים</option>
+					<option value="Tel-Aviv">תל-אביב</option>
+					<option value="Haifa">חיפה</option>
+					<option value="Hadera">חדרה</option>
+					<option value="Herzliya">הרצליה</option>
+					<option value="Petah-Tikva">פתח תקווה</option>
+					<option value="Modi'in">מודיעין</option>
+					<option value="other">אחר</option>
 				</select> &nbsp;&nbsp;&nbsp;&nbsp; <input type="text" placeholder="אחר..."
-					name="other">
+					name="other_city">
 
 				<p>
 					אתר:
@@ -92,6 +98,7 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="text" name="userName" id="userName" class="textBox"
 						required="required" placeholder="שם משתמש..." />
+					<b>*</b>
 				</p>
 
 				<p>
@@ -99,13 +106,15 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="password" name="pwd" id="pwd" class="textBox"
 						required="required" placeholder="סיסמה..." />
+					<b>*</b>
 				</p>
 
 				<p>
 					אשר סיסמה:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="password" name="pwd" id="pwd" class="textBox"
+					<input type="password" name="conPwd" id="pwd" class="textBox"
 						required="required" placeholder="אשר סיסמה..." />
+					<b>*</b>
 				</p>
 
 				<br>

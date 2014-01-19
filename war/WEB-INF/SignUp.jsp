@@ -23,36 +23,42 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="text" name="firstName" id="username" class="textBox"
 						required="required" placeholder="שם פרטי..." />
+					<b>*</b>
 				</p>
 
 				<p>שם משפחה:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="text" name="lastName" id="username" class="textBox"
 						required="required" placeholder="שם משפחה..." />
+					<b>*</b>
 				</p>
 				
 				<p>שם משתמש:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="text" name="username" id="username" class="textBox"
 						required="required" placeholder="שם משתמש..." />
+					<b>*</b>
 				</p>
 								
 				<p>דוא"ל:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="text" name="email" id="email" class="textBox"
 						required="required" placeholder="דואל..." />
+					<b>*</b>
 				</p>
 				
 				<p>סיסמה:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="password" name="pwd" id="pwd" class="textBox"
 						required="required" placeholder="סיסמה..." />
+					<b>*</b>
 				</p>
 
 				<p>אשר סיסמה:
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<input type="password" name="conPwd" id="pwd" class="textBox"
 						required="required" placeholder="אשר סיסמה..." />
+					<b>*</b>
 				</p>
 
 				<br> <br>

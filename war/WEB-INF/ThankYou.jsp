@@ -45,7 +45,6 @@
 				<th>שם משפחה</th>
 				<th>שם משתמש</th>
 				<th>דוא"ל</th>
-				<th>סיסמה</th>
 			</tr>
 			<%
 			
@@ -71,8 +70,6 @@
 				<% System.out.println(item.getMail()); %>
 				<% if(item.getPassword() == null)
 					System.out.println("password is null"); %>
-				<td><%=item.getPassword()%></td>
-				<% System.out.println(item.getPassword()); %>
 
 
 			</tr>
