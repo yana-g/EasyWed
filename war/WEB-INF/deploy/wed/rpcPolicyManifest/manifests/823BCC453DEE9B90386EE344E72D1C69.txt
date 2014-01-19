@@ -1,0 +1,2 @@
+serviceClass: wed.client.GreetingService
+path: C46CCE4CE5AF3BF636A3094FDBC316FC.gwt.rpc
