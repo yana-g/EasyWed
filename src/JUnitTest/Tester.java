@@ -27,6 +27,7 @@ public class Tester {
 	 @Test
 	 public void setPasswordNewUser()
 	 {
+		 newUser.setPassword("lol");
 		assertEquals("lol", newUser.getPassword());
 	 }
 	 
