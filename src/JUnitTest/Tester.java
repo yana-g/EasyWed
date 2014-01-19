@@ -13,6 +13,6 @@ public class Tester {
      {
              //act
              User newUser = new User();
-             
+             assertEquals("Sarah", newUser.getFirstName());           
      }
 }
