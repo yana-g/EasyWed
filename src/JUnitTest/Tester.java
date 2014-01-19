@@ -7,12 +7,16 @@ import usersPack.*;
 
 public class Tester {
 
-	
+    User newUser = new User();
+
 	 @Test
      public void addNewUser() //create a new newUser
      {
-             //act
-             User newUser = new User();
-             assertEquals("Sarah", newUser.getFirstName());           
+           
+             assertEquals(null, newUser.getFirstName());           
      }
+	 
+	
+
+
 }
